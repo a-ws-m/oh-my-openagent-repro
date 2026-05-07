@@ -1,0 +1,19 @@
+{
+  "integrations": {
+    "claude": {
+      "models": [
+        "kimi-k2.6:cloud"
+      ]
+    },
+    "opencode": {
+      "models": [
+        "glm-5.1:cloud",
+        "kimi-k2.6:cloud",
+        "minimax-m2.7:cloud",
+        "minimax-m2.5:cloud",
+        "qwen3-coder:480b-cloud"
+      ]
+    }
+  }
+}
+
