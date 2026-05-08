@@ -2,23 +2,26 @@
   "$schema": "https://raw.githubusercontent.com/code-yeongyu/oh-my-openagent/dev/assets/oh-my-opencode.schema.json",
   "agents": {
     "sisyphus": {
-      "model": "ollama/kimi-k2.6:cloud",
+      "model": "openai/gpt-5.5",
+      "variant": "medium",
       "fallback_models": [
         {
           "model": "ollama/glm-5.1:cloud"
         },
         {
-          "model": "openai/gpt-5.5",
-          "variant": "medium"
+          "model": "openai/gpt-5.4"
+        },
+        {
+          "model": "ollama/kimi-k2.6:cloud"
         }
       ]
     },
     "hephaestus": {
-      "model": "openai/gpt-5.5",
+      "model": "openai/gpt-5.3-codex",
       "variant": "medium",
       "fallback_models": [
         {
-          "model": "openai/gpt-5.3-codex",
+          "model": "openai/gpt-5.5",
           "variant": "medium"
         }
       ]
@@ -33,10 +36,10 @@
       ]
     },
     "librarian": {
-      "model": "ollama/minimax-m2.7:cloud",
+      "model": "ollama/glm-5.1:cloud",
       "fallback_models": [
         {
-          "model": "ollama/minimax-m2.5:cloud"
+          "model": "ollama/minimax-m2.7:cloud"
         },
         {
           "model": "openai/gpt-5.4-mini-fast"
@@ -58,11 +61,11 @@
       "model": "ollama/glm-5.1:cloud",
       "fallback_models": [
         {
-          "model": "ollama/kimi-k2.6:cloud"
-        },
-        {
           "model": "openai/gpt-5.5",
           "variant": "medium"
+        },
+        {
+          "model": "ollama/kimi-k2.6:cloud"
         }
       ]
     },
@@ -70,11 +73,11 @@
       "model": "ollama/glm-5.1:cloud",
       "fallback_models": [
         {
-          "model": "ollama/kimi-k2.6:cloud"
-        },
-        {
           "model": "openai/gpt-5.5",
           "variant": "high"
+        },
+        {
+          "model": "ollama/kimi-k2.6:cloud"
         }
       ]
     },
@@ -82,11 +85,11 @@
       "model": "ollama/glm-5.1:cloud",
       "fallback_models": [
         {
-          "model": "ollama/kimi-k2.6:cloud"
-        },
-        {
           "model": "openai/gpt-5.5",
           "variant": "high"
+        },
+        {
+          "model": "ollama/kimi-k2.6:cloud"
         }
       ]
     },
@@ -100,25 +103,30 @@
       ]
     },
     "atlas": {
-      "model": "ollama/kimi-k2.6:cloud",
+      "model": "openai/gpt-5.5",
+      "variant": "medium",
       "fallback_models": [
         {
-          "model": "ollama/minimax-m2.7:cloud"
+          "model": "ollama/glm-5.1:cloud"
         },
         {
-          "model": "openai/gpt-5.5",
+          "model": "openai/gpt-5.3-codex",
           "variant": "medium"
+        },
+        {
+          "model": "ollama/minimax-m2.7:cloud"
         }
       ]
     },
     "sisyphus-junior": {
-      "model": "ollama/kimi-k2.6:cloud",
+      "model": "ollama/glm-5.1:cloud",
       "fallback_models": [
         {
           "model": "ollama/minimax-m2.7:cloud"
         },
         {
-          "model": "ollama/glm-5.1:cloud"
+          "model": "openai/gpt-5.3-codex",
+          "variant": "medium"
         }
       ]
     }
@@ -156,13 +164,14 @@
       ]
     },
     "artistry": {
-      "model": "ollama/kimi-k2.6:cloud",
+      "model": "ollama/glm-5.1:cloud",
       "fallback_models": [
         {
-          "model": "ollama/minimax-m2.7:cloud"
+          "model": "openai/gpt-5.5",
+          "variant": "xhigh"
         },
         {
-          "model": "ollama/glm-5.1:cloud"
+          "model": "ollama/minimax-m2.7:cloud"
         }
       ]
     },
@@ -178,10 +187,10 @@
       ]
     },
     "unspecified-low": {
-      "model": "ollama/kimi-k2.6:cloud",
+      "model": "ollama/minimax-m2.7:cloud",
       "fallback_models": [
         {
-          "model": "ollama/minimax-m2.7:cloud"
+          "model": "ollama/glm-5.1:cloud"
         },
         {
           "model": "openai/gpt-5.3-codex",
@@ -193,25 +202,25 @@
       "model": "ollama/glm-5.1:cloud",
       "fallback_models": [
         {
-          "model": "ollama/kimi-k2.6:cloud"
-        },
-        {
           "model": "openai/gpt-5.5",
           "variant": "high"
+        },
+        {
+          "model": "ollama/kimi-k2.6:cloud"
         }
       ]
     },
     "writing": {
-      "model": "ollama/kimi-k2.6:cloud",
+      "model": "ollama/glm-5.1:cloud",
       "fallback_models": [
         {
-          "model": "ollama/minimax-m2.7:cloud"
+          "model": "openai/gpt-5.5",
+          "variant": "medium"
         },
         {
-          "model": "ollama/glm-5.1:cloud"
+          "model": "ollama/minimax-m2.7:cloud"
         }
       ]
     }
   }
 }
-
