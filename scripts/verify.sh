@@ -40,9 +40,8 @@ for model in \
   ollama/glm-5.1:cloud \
   ollama/minimax-m2.7:cloud \
   ollama/minimax-m2.5:cloud \
-  openai/gpt-5.5 \
-  openai/gpt-5.3-codex \
-  openai/gpt-5.4-mini-fast
+  ollama/deepseek-v4-flash:cloud \
+  openai/gpt-5.4
 do
   if grep -Fxq "$model" <<<"$models"; then
     echo "ok  $model"
@@ -52,5 +51,19 @@ do
 done
 
 echo
-OMO_SEND_ANONYMOUS_TELEMETRY=0 npx oh-my-openagent doctor
+echo "Checking configured Ollama concurrency cap:"
+node -e '
+const fs = require("fs");
+const home = process.env.HOME;
+const file = `${process.env.XDG_CONFIG_HOME || `${home}/.config`}/opencode/oh-my-openagent.json`;
+const config = JSON.parse(fs.readFileSync(file, "utf8"));
+const concurrency = config.background_task?.providerConcurrency?.ollama;
+if (concurrency !== 3) {
+  console.error(`Unexpected Ollama concurrency: ${concurrency}`);
+  process.exit(1);
+}
+console.log("ok  background_task.providerConcurrency.ollama = 3");
+'
 
+echo
+OMO_SEND_ANONYMOUS_TELEMETRY=0 npx oh-my-openagent doctor

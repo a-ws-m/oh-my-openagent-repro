@@ -8,24 +8,23 @@
           "model": "ollama/glm-5.1:cloud"
         },
         {
-          "model": "openai/gpt-5.5",
-          "variant": "medium"
+          "model": "openai/gpt-5.4",
+          "reasoningEffort": "medium"
         }
       ]
     },
     "hephaestus": {
-      "model": "openai/gpt-5.5",
-      "variant": "medium",
+      "model": "openai/gpt-5.4",
+      "reasoningEffort": "medium",
       "fallback_models": [
         {
-          "model": "openai/gpt-5.3-codex",
-          "variant": "medium"
+          "model": "ollama/glm-5.1:cloud"
         }
       ]
     },
     "oracle": {
-      "model": "openai/gpt-5.5",
-      "variant": "high",
+      "model": "openai/gpt-5.4",
+      "reasoningEffort": "high",
       "fallback_models": [
         {
           "model": "ollama/glm-5.1:cloud"
@@ -33,24 +32,26 @@
       ]
     },
     "librarian": {
-      "model": "ollama/minimax-m2.7:cloud",
+      "model": "ollama/deepseek-v4-flash:cloud",
       "fallback_models": [
         {
           "model": "ollama/minimax-m2.5:cloud"
         },
         {
-          "model": "openai/gpt-5.4-mini-fast"
+          "model": "openai/gpt-5.4",
+          "reasoningEffort": "low"
         }
       ]
     },
     "explore": {
-      "model": "ollama/minimax-m2.7:cloud",
+      "model": "ollama/deepseek-v4-flash:cloud",
       "fallback_models": [
         {
           "model": "ollama/minimax-m2.5:cloud"
         },
         {
-          "model": "openai/gpt-5.4-mini-fast"
+          "model": "openai/gpt-5.4",
+          "reasoningEffort": "low"
         }
       ]
     },
@@ -61,23 +62,12 @@
           "model": "ollama/kimi-k2.6:cloud"
         },
         {
-          "model": "openai/gpt-5.5",
-          "variant": "medium"
+          "model": "openai/gpt-5.4",
+          "reasoningEffort": "medium"
         }
       ]
     },
-    "prometheus": {
-      "model": "ollama/glm-5.1:cloud",
-      "fallback_models": [
-        {
-          "model": "ollama/kimi-k2.6:cloud"
-        },
-        {
-          "model": "openai/gpt-5.5",
-          "variant": "high"
-        }
-      ]
-    },
+    "prometheus": {},
     "metis": {
       "model": "ollama/glm-5.1:cloud",
       "fallback_models": [
@@ -85,14 +75,14 @@
           "model": "ollama/kimi-k2.6:cloud"
         },
         {
-          "model": "openai/gpt-5.5",
-          "variant": "high"
+          "model": "openai/gpt-5.4",
+          "reasoningEffort": "high"
         }
       ]
     },
     "momus": {
-      "model": "openai/gpt-5.5",
-      "variant": "xhigh",
+      "model": "openai/gpt-5.4",
+      "reasoningEffort": "xhigh",
       "fallback_models": [
         {
           "model": "ollama/glm-5.1:cloud"
@@ -106,8 +96,8 @@
           "model": "ollama/minimax-m2.7:cloud"
         },
         {
-          "model": "openai/gpt-5.5",
-          "variant": "medium"
+          "model": "openai/gpt-5.4",
+          "reasoningEffort": "medium"
         }
       ]
     },
@@ -123,19 +113,24 @@
       ]
     }
   },
+  "background_task": {
+    "providerConcurrency": {
+      "ollama": 3
+    }
+  },
   "categories": {
     "visual-engineering": {
       "model": "ollama/glm-5.1:cloud",
       "fallback_models": [
         {
-          "model": "openai/gpt-5.5",
-          "variant": "high"
+          "model": "openai/gpt-5.4",
+          "reasoningEffort": "high"
         }
       ]
     },
     "ultrabrain": {
-      "model": "openai/gpt-5.5",
-      "variant": "xhigh",
+      "model": "openai/gpt-5.4",
+      "reasoningEffort": "xhigh",
       "fallback_models": [
         {
           "model": "ollama/glm-5.1:cloud"
@@ -146,12 +141,12 @@
       "model": "ollama/glm-5.1:cloud",
       "fallback_models": [
         {
-          "model": "openai/gpt-5.5",
-          "variant": "medium"
+          "model": "openai/gpt-5.4",
+          "reasoningEffort": "medium"
         },
         {
-          "model": "openai/gpt-5.3-codex",
-          "variant": "medium"
+          "model": "openai/gpt-5.4",
+          "reasoningEffort": "low"
         }
       ]
     },
@@ -167,13 +162,14 @@
       ]
     },
     "quick": {
-      "model": "ollama/minimax-m2.7:cloud",
+      "model": "ollama/deepseek-v4-flash:cloud",
       "fallback_models": [
         {
           "model": "ollama/minimax-m2.5:cloud"
         },
         {
-          "model": "openai/gpt-5.4-mini-fast"
+          "model": "openai/gpt-5.4",
+          "reasoningEffort": "low"
         }
       ]
     },
@@ -184,8 +180,8 @@
           "model": "ollama/minimax-m2.7:cloud"
         },
         {
-          "model": "openai/gpt-5.3-codex",
-          "variant": "medium"
+          "model": "openai/gpt-5.4",
+          "reasoningEffort": "medium"
         }
       ]
     },
@@ -196,8 +192,8 @@
           "model": "ollama/kimi-k2.6:cloud"
         },
         {
-          "model": "openai/gpt-5.5",
-          "variant": "high"
+          "model": "openai/gpt-5.4",
+          "reasoningEffort": "high"
         }
       ]
     },
@@ -214,4 +210,3 @@
     }
   }
 }
-

@@ -20,6 +20,12 @@
         "minimax-m2.5:cloud": {
           "name": "MiniMax M2.5 Cloud"
         },
+        "nemotron-3-super:cloud": {
+          "name": "Nemotron 3 Super Cloud"
+        },
+        "deepseek-v4-flash:cloud": {
+          "name": "DeepSeek V4 Flash Cloud"
+        },
         "qwen3-coder:480b-cloud": {
           "name": "Qwen3 Coder 480B Cloud"
         }
@@ -31,4 +37,3 @@
     "oh-my-openagent@latest"
   ]
 }
-

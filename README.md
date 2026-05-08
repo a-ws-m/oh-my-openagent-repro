@@ -3,7 +3,7 @@
 This repo captures a reproducible OpenCode setup using:
 
 - `oh-my-openagent` as the OpenCode plugin
-- Ollama cloud models for Kimi, GLM, MiniMax, and Qwen Coder
+- Ollama cloud models for Kimi, GLM, DeepSeek, MiniMax, Nemotron, and Qwen Coder
 - OpenAI/Codex models for GPT-native roles
 - no free `opencode/*` model fallbacks
 
@@ -13,10 +13,11 @@ No credentials are stored in this repo.
 
 The model map is intentionally Ollama-first for most work:
 
-- Kimi via Ollama: orchestration and writing-heavy roles
+- Kimi 2.6 via Ollama: orchestration and writing-heavy roles
 - GLM via Ollama: planning, review fallback, deep/general categories
-- MiniMax via Ollama: fast utility/search/doc roles
-- OpenAI/Codex: GPT-native and high-reasoning roles such as `hephaestus`, `oracle`, `momus`, and `ultrabrain`
+- DeepSeek V4 Flash via Ollama: easy/non-coding quick tasks plus cheap research/search roles such as `librarian` and `explore`
+- MiniMax via Ollama: utility and fallback capacity
+- OpenAI/Codex: GPT 5.4 for GPT-native and high-reasoning roles such as `hephaestus`, `oracle`, `momus`, and `ultrabrain`
 
 ## Prerequisites
 
@@ -96,6 +97,7 @@ Expected:
 - JSON files parse cleanly
 - `opencode models` contains the configured Ollama and OpenAI models
 - `npx oh-my-openagent doctor` has no model warnings
+- `background_task.providerConcurrency.ollama` resolves to `3`
 
 If doctor reports `GitHub CLI not authenticated`, run:
 
@@ -110,8 +112,8 @@ Use these to confirm provider routing:
 ```bash
 opencode run -m ollama/kimi-k2.6:cloud 'Reply with exactly: ok'
 opencode run -m ollama/glm-5.1:cloud 'Reply with exactly: ok'
-opencode run -m ollama/minimax-m2.7:cloud 'Reply with exactly: ok'
-opencode run -m openai/gpt-5.5 'Reply with exactly: ok'
+opencode run -m ollama/deepseek-v4-flash:cloud 'Reply with exactly: ok'
+opencode run -m openai/gpt-5.4 'Reply with exactly: ok'
 ```
 
 ## Launch
@@ -131,4 +133,4 @@ Use `ultrawork` or `ulw` in a prompt to trigger oh-my-openagent orchestration be
 - This setup assumes subscriptions/access for Ollama cloud and OpenAI/Codex.
 - This setup deliberately avoids free `opencode/*` model fallbacks.
 - Qwen Coder is registered with OpenCode for manual use, but not assigned to oh-my-openagent agents because `oh-my-openagent doctor` previously flagged it as an unknown compatibility fallback.
-
+- `prometheus` inherits the `sisyphus` model path from Oh My OpenAgent defaults instead of carrying its own override.

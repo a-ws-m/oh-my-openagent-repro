@@ -11,9 +11,10 @@
         "kimi-k2.6:cloud",
         "minimax-m2.7:cloud",
         "minimax-m2.5:cloud",
+        "nemotron-3-super:cloud",
+        "deepseek-v4-flash:cloud",
         "qwen3-coder:480b-cloud"
       ]
     }
   }
 }
-
